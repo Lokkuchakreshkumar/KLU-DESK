@@ -10,7 +10,7 @@ import App from './App.jsx'
 import Admin from './Components/admin.jsx'
  const router = createBrowserRouter([
   {path:'/',element:<App/>}, 
-  {path:'/adminchakreshtrue',element:<Admin/>},
+  {path:'/api/adminchakreshtrue',element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>}
  
 ])
