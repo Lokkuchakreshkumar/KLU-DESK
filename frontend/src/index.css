@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+.bluespotlight{
+    background: radial-gradient(ellipse at top left,#1e3a8a 20%, #0f172a 60%);
+}
+.strict{
+     font-family: "Roboto Condensed", sans-serif;
+}
+.sans{
+     font-family: "Open Sans", sans-serif;
+}
+.mono{
+      font-family: "Libertinus Mono", monospace;
+}
+.outfit{
+     font-family:"Outfit", sans-serif;
+}
