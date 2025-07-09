@@ -24,7 +24,7 @@ app.get('/:year/:semester',async(req,res)=>{
     res.send(data)
 
 })
-app.post('/api/adminchakreshtrue',async(req,res)=>{
+app.post('/adminchakreshtrue',async(req,res)=>{
 console.log(req.body.input)
 await pdf.create(req.body.input).then((result)=>{
     console.log(result)
