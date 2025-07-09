@@ -11,7 +11,7 @@ const Resource = () => {
     const {year,semester} = params
     useEffect( ()=>{
         const getresources = async(year,semester) =>{
-                let data = await axios.get(`http://localhost:8080/${year}/${semester}`)
+                let data = await axios.get(`https://klu-desk.onrender.com/${year}/${semester}`)
                 console.log(data.data)
                 return data.data
         }

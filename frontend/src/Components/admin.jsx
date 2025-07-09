@@ -30,7 +30,7 @@ const Admin = () => {
         event.preventDefault();
         console.log(input)
         try{
-             let data = await axios.post('http://localhost:8080/api/adminchakreshtrue',{
+             let data = await axios.post('https://klu-desk.onrender.com/api/adminchakreshtrue',{
         input:input
       })
       console.log(data.data)
