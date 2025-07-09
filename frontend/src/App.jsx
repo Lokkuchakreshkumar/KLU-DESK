@@ -1,7 +1,7 @@
 import Intro from "./Components/Intro.jsx"
 import Navbar from "./Components/navbar.jsx"
 import Starter from "./Components/starter.jsx"
-import Before from "./Components/before.jsx"
+import Before from "./Components/Before.jsx"
 import New from "./Components/New.jsx"
 import Mainpage from "./Components/Mainpage.jsx"
 
