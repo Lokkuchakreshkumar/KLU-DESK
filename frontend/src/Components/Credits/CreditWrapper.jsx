@@ -3,7 +3,7 @@ import Recognition from './Recognition'
 import Text from "./Text.jsx"
 import CreditCardWrapper from './CreditCardWrapper.jsx'
 import Join from './Join.jsx'
-import Footer from './footer.jsx'
+import Footer from './Footer.jsx'
 
 const CreditWrapper = () => {
   return (
