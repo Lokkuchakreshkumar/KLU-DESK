@@ -35,7 +35,7 @@ const Resource = () => {
     <div className='bluespotlight min-h-screen'>
           <div className="fixed shadow-xl/30  z-50 flex items-center justify-between strict text-3xl  backdrop-blur-sm  w-full h-16" >
               <span className=" text-white "><SiStudyverse className="inline text-cyan-400 ml-4 drop-shadow-[0px_0px_15px_cyan]"/><span className="font-semibold text-lg sm:text-xl p-4 py-1">KLU DESK</span></span>
-              <a href="/" className="text-white text-xl border inset-shadow-xl inset-shadow-black sm:hidden mr-4 border-white rounded-3xl p-3">Resources</a>
+              <a href="/" className="text-white text-xl border inset-shadow-xl inset-shadow-black  sm:mr-12 mr-4 border-white rounded-3xl p-3">Resources</a>
                 </div>
                 {loading &&  <div className='pt-20 flex justify-center'>
               <div className=' p-4 rounded-xl w-[95%] text-center text-white border border-yellow-500'><IoIosWarning className='text-yellow-400 mr-4 inline text-2xl' />If your seeing blank page this is due to we are running on free server ,wait for 10~30 seconds and refresh but the page will be back this is not any error</div>
