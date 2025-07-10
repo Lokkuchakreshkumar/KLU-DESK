@@ -5,22 +5,29 @@ import axios from 'axios'
 import Card from './Card.jsx'
 
 
+import { IoIosWarning } from "react-icons/io";
+
+
 const Resource = () => {
     let [data,setData] = useState([])
+    let [loading,setLoading] = useState(true)
       const params = useParams()
     const {year,semester} = params
     useEffect( ()=>{
-        const getresources = async(year,semester) =>{
-                let data = await axios.get(`https://klu-desk.onrender.com/${year}/${semester}`)
+   const getResources = async()=>{
+        try {
+         let data = await axios.get(`https://klu-desk.onrender.com/${year}/${semester}`)
                 console.log(data.data)
-                return data.data
-        }
-        async function sendData (){
-              let realdata =  await getresources(year,semester);
-      setData(realdata)
-        }
+                setData(data.data)
+       } catch (error) {
+        console.log(err)
+       } finally{
+        setLoading(false)
+       }
     
-        sendData()
+   }
+   getResources();
+       
 },[])
   
   return (
@@ -29,6 +36,14 @@ const Resource = () => {
               <span className=" text-white "><SiStudyverse className="inline text-cyan-400 ml-4 drop-shadow-[0px_0px_15px_cyan]"/><span className="font-semibold text-lg sm:text-xl p-4 py-1">KLU DESK</span></span>
               <a href="/" className="text-white text-xl border inset-shadow-xl inset-shadow-black sm:hidden mr-4 border-white rounded-3xl p-3">Resources</a>
                 </div>
+                {loading &&  <div className='pt-20 flex justify-center'>
+              <div className=' p-4 rounded-xl w-[95%] text-center text-white border border-yellow-500'><IoIosWarning className='text-yellow-400 mr-4 inline text-2xl' />If your seeing blank page this is due to we are running on free server ,wait for 10~30 seconds and refresh but the page will be back this is not any error</div>
+
+           </div>}
+         {data.length===0 && <div className='flex flex-col items-center   pt-20 text-white text-xl'><p className=''>We don't have resources for now</p>
+         <div className='pt-12'>  <a href="https://wa.me/918688913488?text=Hey%20Chakresh%2C%20we%20want%20to%20contribute%20to%20KLU%20DESK
+
+" className='p-4 border border-white text-white rounded-lg hover:bg-cyan hover:text-black hover:bg-cyan-400 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50'>Contribute</a></div></div>}
         <div className='flex flex-wrap justify-center items-center pt-20'>
       {
             data.map((el) => {
