@@ -6,7 +6,8 @@ import { Worker, Viewer } from '@react-pdf-viewer/core';
 const Card = ({type,title,subject,year,semester,url}) => {
     const colorMap = {
         pyq:'text-green-500',
-        'IMP Questions':'text-orange-500'
+        'IMP Questions':'text-orange-500',
+        Notes:'text-cyan-500'
     }
     let yearMap = {
         1 : 'st year',

@@ -21,7 +21,7 @@ const Resource = () => {
                 console.log(data.data)
                 setData(data.data)
        } catch (error) {
-        console.log(err)
+        console.log(error)
        } finally{
         setLoading(false)
        }
