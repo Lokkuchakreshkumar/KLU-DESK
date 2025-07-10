@@ -9,6 +9,7 @@ import { IoIosWarning } from "react-icons/io";
 
 
 const Resource = () => {
+  const RENDER_URI = import.meta.env.VITE_RENDER_URI
     let [data,setData] = useState([])
     let [loading,setLoading] = useState(true)
       const params = useParams()
@@ -16,7 +17,7 @@ const Resource = () => {
     useEffect( ()=>{
    const getResources = async()=>{
         try {
-         let data = await axios.get(`https://klu-desk.onrender.com/${year}/${semester}`)
+         let data = await axios.get(`${RENDER_URI}/${year}/${semester}`)
                 console.log(data.data)
                 setData(data.data)
        } catch (error) {

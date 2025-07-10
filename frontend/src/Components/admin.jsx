@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from "axios"
 
 const Admin = () => {
-
+const RENDER_URI = import.meta.env.VITE_RENDER_URI
    let [formsubmit,setformsubmit] = useState('')
     let [input,setInput] = useState({
         title:'',
@@ -30,7 +30,7 @@ const Admin = () => {
         event.preventDefault();
         console.log(input)
         try{
-             let data = await axios.post('https://klu-desk.onrender.com/adminchakreshtrue',{
+             let data = await axios.post(`${RENDER_URI}/adminchakreshtrue`,{
         input:input
       })
       console.log(data.data)
