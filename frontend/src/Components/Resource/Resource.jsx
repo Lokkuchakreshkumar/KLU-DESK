@@ -40,7 +40,7 @@ const Resource = () => {
               <div className=' p-4 rounded-xl w-[95%] text-center text-white border border-yellow-500'><IoIosWarning className='text-yellow-400 mr-4 inline text-2xl' />If your seeing blank page this is due to we are running on free server ,wait for 10~30 seconds and refresh but the page will be back this is not any error</div>
 
            </div>}
-         {data.length===0 && <div className='flex flex-col items-center   pt-20 text-white text-xl'><p className=''>We don't have resources for now</p>
+         { !loading && data.length===0 && <div className='flex flex-col items-center   pt-20 text-white text-xl'><p className=''>We don't have resources for now</p>
          <div className='pt-12'>  <a href="https://wa.me/918688913488?text=Hey%20Chakresh%2C%20we%20want%20to%20contribute%20to%20KLU%20DESK
 
 " className='p-4 border border-white text-white rounded-lg hover:bg-cyan hover:text-black hover:bg-cyan-400 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50'>Contribute</a></div></div>}
