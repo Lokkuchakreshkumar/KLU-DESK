@@ -22,10 +22,11 @@ const Main = ({ id }) => {
         query:input
       }
     );
+      setInput('')
     console.log(data.data);
     setMessages((prev)=>[...prev,{sender:'ai',text:data.data}])
     console.log(input);
-    setInput('')
+  
   };
 
   return (
