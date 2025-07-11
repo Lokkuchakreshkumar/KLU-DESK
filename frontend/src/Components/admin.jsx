@@ -63,7 +63,9 @@ const RENDER_URI = import.meta.env.VITE_RENDER_URI
              <input type="text"  onChange={handleInput} value={input.type}  name='type'  placeholder='enter type ex:before_exam,pyq,notes,etc' className='h-16 p-4 border border-black' />
              <button type="submit" className='p-4 bg-green-600 text-white'>Submit</button>
         </form> 
-      {formsubmit && <p>form submitted</p>}
+    
+ {formsubmit && <p className='p-4 bg-green-500 text-white font-bold'>form submitted</p>}
+    
     </div>
     
   )
