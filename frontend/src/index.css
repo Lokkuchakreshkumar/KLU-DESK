@@ -19,3 +19,6 @@
 .outfit{
      font-family:"Outfit", sans-serif;
 }
+.animate-slow{
+     animation: spin 5s linear infinite;
+}

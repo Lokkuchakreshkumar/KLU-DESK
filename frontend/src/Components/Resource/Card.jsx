@@ -1,9 +1,12 @@
 import React from 'react'
+import { RiGeminiLine } from "react-icons/ri";
 import { IoIosDocument } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { useNavigate } from 'react-router-dom';
 
-const Card = ({type,title,subject,year,semester,url}) => {
+const Card = ({type,title,subject,year,semester,url,id}) => {
+  const Navigate = useNavigate();
     const colorMap = {
         pyq:'text-green-500',
         'IMP Questions':'text-orange-500',
@@ -14,6 +17,9 @@ const Card = ({type,title,subject,year,semester,url}) => {
         2: 'nd year',
         3: 'rd year',
         4:'th year'
+    }
+    async function Chat (id){
+      Navigate(`/chat/${id}`)
     }
     function convertDriveLink(shareLink) {
   const match = shareLink.match(/\/d\/(.+?)\//);
@@ -40,6 +46,7 @@ const handlepreview = ()=>{
 
 <button onClick={handlepreview} className='p-4 bg-cyan-transparent border border-white rounded-xl text-white  hover:bg-black w-full mt-4 hover:cursor-pointer'>Preview</button>
 <a href={convertDriveLink(url)} className='w-full flex justify-center border border-cyan-500 mt-4 p-4 text-white rounded-2xl hover:bg-cyan-500 hover:cursor-pointer hover:shadow-xl hover:shadow-cyan-500/50'>Downlaod in Drive</a>
+<button onClick={()=>Chat(id)} className='p-4 bg-linear-to-r from-sky-800 to-violet-800 border mono border-white rounded-xl text-white  w-full mt-4 hover:cursor-pointer'><RiGeminiLine className=' inline  mr-4 text-lg text-[#60a5fa]'/>Ask ai</button>
     </div>
   )
 }

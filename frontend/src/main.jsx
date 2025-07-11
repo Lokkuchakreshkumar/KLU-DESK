@@ -6,12 +6,14 @@ import Resource from './Components/Resource/Resource.jsx'
 import './index.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import App from './App.jsx'
+import Chat from './Components/Resource/Chat.jsx'
 
 import Admin from './Components/admin.jsx'
  const router = createBrowserRouter([
   {path:'/',element:<App/>}, 
   {path:'/adminchakreshtrue',element:<Admin/>},
-  {path:`/:year/:semester`,element:<Resource/>}
+  {path:`/:year/:semester`,element:<Resource/>},
+  {path:`/chat/:id`,element:<Chat/>}
  
 ])
 
