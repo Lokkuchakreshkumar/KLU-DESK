@@ -6,6 +6,7 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown"
 const Main = ({ id }) => {
   let [input, setInput] = useState("");
+    const RENDER_URI = import.meta.env.VITE_RENDER_URI
   let [messages,setMessages] = useState([]);
 
   let handleInput = async (event) => {
@@ -16,7 +17,7 @@ const Main = ({ id }) => {
     setMessages((prev)=>[...prev,{sender:'user',text:input}])
     event.preventDefault();
     let data = await axios.post(
-      `http://localhost:8080/chat/${id}`,
+      `${RENDER_URI}/chat/${id}`,
       {
         query:input
       }
