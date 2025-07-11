@@ -96,6 +96,7 @@ app.get('/:year/:semester',async(req,res)=>{
     console.log(year,semester)
     let data = await pdf.find({year,semester})
     console.log(data);
+res.send(data)
 
   
 })

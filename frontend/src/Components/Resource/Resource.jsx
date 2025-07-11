@@ -45,7 +45,7 @@ const Resource = () => {
         <div className='flex flex-wrap justify-center items-center pt-20'>
       {
             data.map((el) => {
-        return <Card id={el._id} type={el.type} title={el.title} subject={el.subject} year={el.year} semester={el.semester} url={el.url}/>
+        return <Card key={el._id} id={el._id} type={el.type} title={el.title} subject={el.subject} year={el.year} semester={el.semester} url={el.url}/>
 })
       }
         </div>
