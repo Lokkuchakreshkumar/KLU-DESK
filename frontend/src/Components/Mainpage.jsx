@@ -1,5 +1,6 @@
 import { AiFillThunderbolt } from "react-icons/ai";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 
 import { useNavigate } from "react-router-dom";
@@ -22,6 +23,9 @@ export default function Mainpage(){
     }
 return (
     <section id="resource" className="flex flex-col items-center ">
+        <div className="w-[75%] flex flex-col items-center justify-center p-8"> 
+         <a className="bg-green-500 strict text-2xl w-[80%] hover:bg-green-600  items-center  transition hover:text-black flex justify-center p-4  rounded-xl hover:scale-105" href="https://chat.whatsapp.com/I5HGsdRu3D2Iz50D7ChPAA"><FaWhatsapp className="inline mr-2 text-black"/>Join Y25 Group</a>
+        </div>
         <div className="text-3xl text-white text-center font-extrabold">Find Your Resources</div>
         <div className="text-xl text-white/40 mt-4 text-center font-semibold">Choose your academic details to access curated study materials and resources</div>
         <form  onSubmit={()=>handleSubmit(event)}  className="w-[85%] rounded-2xl border border-white mb-16 mt-8 p-16 bg-[#050C1A] flex flex-col">
