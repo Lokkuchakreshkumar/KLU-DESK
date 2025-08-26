@@ -2,7 +2,6 @@ import React from 'react'
 import Recognition from './Recognition'
 import Text from "./Text.jsx"
 import CreditCardWrapper from './CreditCardWrapper.jsx'
-import Join from './Join.jsx'
 import Footer from './Footer.jsx'
 
 const CreditWrapper = () => {
@@ -11,8 +10,6 @@ const CreditWrapper = () => {
         <Recognition/>
         <Text/>
         <CreditCardWrapper/>
-        <div className='text-white mt-24 sm:mb-4 text-4xl font-semibold'>Join us</div>
-        <Join/>
         <Footer/>
     </div>
   )
