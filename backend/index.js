@@ -101,7 +101,7 @@ res.send(data)
   
 })
 
-app.post('/adminchakreshtrue',async(req,res)=>{
+app.post(process.env.SAFEROUTE,async(req,res)=>{
 console.log(req.body.input)
 await pdf.create(req.body.input).then((result)=>{
     console.log(result)
