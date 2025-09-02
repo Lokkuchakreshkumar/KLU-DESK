@@ -43,7 +43,9 @@ const Resource = () => {
            </div>}
        
         <div className='flex flex-wrap justify-center items-center pt-20'>
+          <a href="https://kluniversityin-my.sharepoint.com/personal/hari_vege_kluniversity_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments%2FOOP%28A%29%5FCO1%5FStudent%20Refresher%20Notes%20%281%29%2Epdf&parent=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments&ga=1" className='w-[90%]'>Harikiran's p-2 sir Java Notes</a>
       {
+        
             data.map((el) => {
         return <Card key={el._id} id={el._id} type={el.type} title={el.title} subject={el.subject} year={el.year} semester={el.semester} url={el.url}/>
 })
