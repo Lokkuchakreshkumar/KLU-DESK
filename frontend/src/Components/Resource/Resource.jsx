@@ -43,7 +43,7 @@ const Resource = () => {
            </div>}
        
         <div className='flex flex-wrap justify-center items-center pt-20'>
-          <a href="https://kluniversityin-my.sharepoint.com/personal/hari_vege_kluniversity_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments%2FOOP%28A%29%5FCO1%5FStudent%20Refresher%20Notes%20%281%29%2Epdf&parent=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments&ga=1" className='w-[90%] p-2 border border-black text-white'>Harikiran's sir Java Notes</a>
+          <a href="https://kluniversityin-my.sharepoint.com/personal/hari_vege_kluniversity_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments%2FOOP%28A%29%5FCO1%5FStudent%20Refresher%20Notes%20%281%29%2Epdf&parent=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments&ga=1" className='w-[90%] p-2 border text-center border-black text-white'>Harikiran's sir Java Notes</a>
       {
         
             data.map((el) => {
