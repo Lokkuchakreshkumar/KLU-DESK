@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Resource from './Components/Resource/Resource.jsx'
+import Maintenance from './Components/Maintenance.jsx'
 
 
 import './index.css'
@@ -10,7 +11,7 @@ import Chat from './Components/Resource/Chat.jsx'
 
 import Admin from './Components/admin.jsx'
  const router = createBrowserRouter([
-  {path:'/',element:<App/>}, 
+  {path:'/',element:<Maintenance/>}, 
   {path:'/adminchakreshtrue',element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
   {path:`/chat/:id`,element:<Chat/>}

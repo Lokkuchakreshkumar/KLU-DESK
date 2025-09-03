@@ -9,7 +9,14 @@ import { IoIosWarning } from "react-icons/io";
 
 
 const Resource = () => {
-  const RENDER_URI = import.meta.env.VITE_RENDER_URI
+     let RENDER_URI;
+let env = "production";
+if(env == "production"){
+ RENDER_URI= import.meta.env.VITE_RENDER_URI
+}
+else{
+  RENDER_URI = `http://localhost:8080`
+}
     let [data,setData] = useState([])
     let [loading,setLoading] = useState(true)
       const params = useParams()

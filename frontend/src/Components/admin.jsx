@@ -3,7 +3,14 @@ import { useState } from 'react'
 import axios from "axios"
 
 const Admin = () => {
-const RENDER_URI = import.meta.env.VITE_RENDER_URI
+    let RENDER_URI;
+let env = "production"
+if(env == "production"){
+ RENDER_URI= import.meta.env.VITE_RENDER_URI
+}
+else{
+  RENDER_URI = `http://localhost:8080`
+}
    let [formsubmit,setformsubmit] = useState('')
     let [input,setInput] = useState({
         title:'',
