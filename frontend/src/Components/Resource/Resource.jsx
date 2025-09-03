@@ -77,7 +77,7 @@ else{
        
         <div className='flex flex-wrap justify-center items-center pt-20'>
           {
-            !loading &&     <div className='pt-20 w-full flex justify-center items-center '>
+            !loading &&     <div className='pt-15 w-full flex justify-center items-center '>
               
                   <form   className='w-full flex items-center justify-center p-2 '>
                     <select onChange={nameret}  name="" id="" className='border w-[65%] p-4 rounded-xl bg-[#171717] text-white' >
