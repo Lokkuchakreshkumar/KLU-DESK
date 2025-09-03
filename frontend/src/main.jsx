@@ -11,7 +11,7 @@ import Chat from './Components/Resource/Chat.jsx'
 
 import Admin from './Components/admin.jsx'
  const router = createBrowserRouter([
-  {path:'/',element:<App/>}, 
+  {path:'/',element:<Maintenance/>}, 
   {path:'/adminchakreshtrue',element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
   {path:`/chat/:id`,element:<Chat/>}

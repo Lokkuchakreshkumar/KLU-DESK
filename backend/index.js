@@ -24,6 +24,12 @@ async function mongo_cnct(){
 app.get('/',(req,res)=>{
       res.send('listening')
 })
+app.post('/fetch',async(req,res)=>{
+    console.log(req.body.input)
+  let result =  await pdf.find({subject:req.body.input})
+  console.log(result)
+    res.send(result);
+})
 app.post('/chat/:id',async(req,res)=>{
     let {id} = req.params
  console.log(req.body)
@@ -95,7 +101,7 @@ app.get('/:year/:semester',async(req,res)=>{
     const semester = parseInt(req.params.semester)
     console.log(year,semester)
     let data = await pdf.find({year,semester})
-    console.log(data);
+    
 res.send(data)
 
   
@@ -109,7 +115,7 @@ await pdf.create(req.body.input).then((result)=>{
 }).catch((Err)=>{
 console.log(Err)
 })
-   
+
 
 })
 app.listen('8080',()=>{
