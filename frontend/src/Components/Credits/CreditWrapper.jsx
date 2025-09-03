@@ -3,6 +3,7 @@ import Recognition from './Recognition'
 import Text from "./Text.jsx"
 import CreditCardWrapper from './CreditCardWrapper.jsx'
 import Footer from './Footer.jsx'
+import demovideo from "../../assets/WhatsApp Video 2025-08-26 at 16.52.32_222f65c2.mp4"
 
 const CreditWrapper = () => {
   return (
@@ -10,6 +11,9 @@ const CreditWrapper = () => {
         <Recognition/>
         <Text/>
         <CreditCardWrapper/>
+        
+          <video src={demovideo} className="rounded-3xl w-[85%] sm:w-[45%]" muted autoPlay loop></video>
+            
         <Footer/>
     </div>
   )

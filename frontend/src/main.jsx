@@ -10,9 +10,10 @@ import App from './App.jsx'
 import Chat from './Components/Resource/Chat.jsx'
 
 import Admin from './Components/admin.jsx'
+let route = import.meta.env.VITE_SAFE_PATH;
  const router = createBrowserRouter([
-  {path:'/',element:<Maintenance/>}, 
-  {path:'/adminchakreshtrue',element:<Admin/>},
+  {path:'/',element:<App/>}, 
+  {path:`/${route}`,element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
   {path:`/chat/:id`,element:<Chat/>}
  

@@ -5,6 +5,7 @@ import Before from "./Components/Before.jsx"
 import New from "./Components/New.jsx"
 import Mainpage from "./Components/Mainpage.jsx"
 
+
 import Wrapper from "./Components/Missioncomponents/Wrapper.jsx"
 import CreditWrapper from "./Components/Credits/CreditWrapper.jsx"
 import React from "react";
@@ -21,9 +22,11 @@ export default function App(){
        <Before/>
         <New/>
         <Mainpage/>
-      
+    
         <Wrapper/>
+
         <CreditWrapper/>
+       
       
        
     </div>

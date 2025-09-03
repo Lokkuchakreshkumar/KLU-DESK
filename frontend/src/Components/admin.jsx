@@ -37,7 +37,7 @@ else{
         event.preventDefault();
         console.log(input)
         try{
-             let data = await axios.post(`${RENDER_URI}/adminchakreshtrue`,{
+             let data = await axios.post(`${RENDER_URI}/${import.meta.env.VITE_SAFE_PATH}`,{
         input:input
       })
       console.log(data.data)
