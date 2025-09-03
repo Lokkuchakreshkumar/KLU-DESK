@@ -6,7 +6,7 @@ const Footer = () => {
 
     <div className='flex m-4 w-full flex-col text-white items-center'>
         <hr  className='my-4 border w-[95%] border-gray-400'/>
-        <div>Made with &nbsp; <FaHeart className='inline text-red-500 drop-shadow-[0px_0px_15px_red]' /> &nbsp; by <a href="https://chakresh.vercel.app" target='_blank' className='text-lg underline'>Chakresh</a></div>
+        <div>Made with &nbsp; <FaHeart className='inline text-red-500 drop-shadow-[0px_0px_15px_red]' /> &nbsp; by <a href="https://chakresh.vercel.app" target='_blank' className='text-lg animate-pulse underline decoration-blue-500 text-blue-400'>Chakresh</a></div>
 
     </div>
   )
