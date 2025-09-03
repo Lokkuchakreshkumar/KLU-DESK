@@ -19,14 +19,37 @@ else{
 }
     let [data,setData] = useState([])
     let [loading,setLoading] = useState(true)
+    let [selected,setSelected] = useState("All");
+    let [unique,setUnique] = useState([]);
       const params = useParams()
     const {year,semester} = params
+    let fetchfilter = async(e)=>{
+     e.preventDefault();
+    if(selected=="All"){
+        let data = await axios.get(`${RENDER_URI}/${year}/${semester}`)
+               let realdata = data.data;
+               setData(realdata);
+    }else{
+      let data =await  axios.post(`${RENDER_URI}/fetch`,{input:selected});
+      let realdata = data.data;
+      setData(realdata);
+    }
+    }
+    let nameret = (e)=>{
+     
+      console.log('i am triggered')
+      console.log(e.target.value);
+      setSelected(e.target.value)
+    }
     useEffect( ()=>{
    const getResources = async()=>{
         try {
          let data = await axios.get(`${RENDER_URI}/${year}/${semester}`)
                 console.log(data.data)
                 setData(data.data)
+                let subjects = data.data.map((el=>el.subject));
+                let unique = Array.from(new Set(subjects));
+                setUnique(unique);
        } catch (error) {
         console.log(error)
        } finally{
@@ -40,9 +63,29 @@ else{
   
   return (
     <div className='bluespotlight min-h-screen'>
+
           <div className="fixed shadow-xl/30  z-50 flex items-center justify-between strict text-3xl  backdrop-blur-sm  w-full h-16" >
               <span className=" text-white "><SiStudyverse className="inline text-cyan-400 ml-4 drop-shadow-[0px_0px_15px_cyan]"/><span className="font-semibold text-lg sm:text-xl p-4 py-1">KLU DESK</span></span>
               <a href="/" className="text-white text-xl border inset-shadow-xl inset-shadow-black  sm:mr-12 mr-4 border-white rounded-3xl p-3">Resources</a>
+                </div>
+
+                <div className='pt-24 flex justify-center items-center '>
+              
+                  <form   className='w-full flex items-center p-2 '>
+                    <select onChange={nameret}  name="" id="" className='border w-[65%] p-4 rounded-xl bg-[#171717] text-white' >
+                     <option value={"All"} selected>All</option>
+                      {
+                      
+                      unique.map((el)=>{
+                       return <option value={el}>{el}</option>
+                        })
+                      }
+                    </select>
+                    <button onClick={fetchfilter}  className='p-4 m-4 h-[85%] rounded-3xl px-6 border border-white/50 bg-[#171717] text-white items-center'>Search</button>
+                  </form>
+
+                  
+              
                 </div>
                 {loading &&  <div className='pt-20 flex justify-center'>
               <div className=' p-4 rounded-xl w-[95%] text-center text-white border border-yellow-500'><IoIosWarning className='text-yellow-400 mr-4 inline text-2xl' />If your seeing blank page this is due to we are running on free server ,wait for 10~30 seconds and refresh but the page will be back this is not any error</div>
@@ -50,7 +93,7 @@ else{
            </div>}
        
         <div className='flex flex-wrap justify-center items-center pt-20'>
-          <a href="https://kluniversityin-my.sharepoint.com/personal/hari_vege_kluniversity_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments%2FOOP%28A%29%5FCO1%5FStudent%20Refresher%20Notes%20%281%29%2Epdf&parent=%2Fpersonal%2Fhari%5Fvege%5Fkluniversity%5Fin%2FDocuments&ga=1" className='w-[90%] p-2 border text-center font-bold border-green-400 rounded-xl sm:w-[85%] text-white'>Harikiran sir Java Notes</a>
+        
       {
         
             data.map((el) => {
