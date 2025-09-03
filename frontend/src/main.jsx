@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Resource from './Components/Resource/Resource.jsx'
-import Maintenance from './Components/Maintenance.jsx'
 
 
 import './index.css'
