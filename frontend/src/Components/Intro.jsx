@@ -8,7 +8,7 @@ export default function Intro(){
               <div className="text-4xl sm:text-6xl   text-white font-bold">
                    Access KL University
             </div>
-            <div className="text-4xl w-full items-center sm:text-5xl mt-1 text-[#4188F6]  font-bold">
+            <div className="text-4xl w-full items-center sm:text-5xl mt-1 text-amber-500  font-bold">
             Resources Instantly
             </div>
           </div>

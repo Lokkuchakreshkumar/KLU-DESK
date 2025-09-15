@@ -3,7 +3,7 @@ import { FaMedal } from "react-icons/fa";
 
 const Card1 = () => {
   return (
-    <div className='flex flex-col w-full shadow-xl shadow-black m-4 sm:w-[45%]  p-4 mt-8 bg-[#080E1D]  rounded-xl items-center'>
+    <div className='flex flex-col w-full shadow-xl shadow-black m-4 sm:w-[45%]  p-4 mt-8 bg-[#121212]  rounded-xl items-center'>
         <div className='flex items-center'>
             <div className='p-4  bg-[#0F2247] rounded-xl text-cyan-400'>
 <FaMedal/>

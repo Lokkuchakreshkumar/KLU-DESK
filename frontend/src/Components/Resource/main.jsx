@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown"
 const Main = ({ id }) => {
   let [input, setInput] = useState("");
       let RENDER_URI;
-let env = "production"
+let env = "dev"
 if(env == "production"){
  RENDER_URI= import.meta.env.VITE_RENDER_URI
 }
@@ -46,7 +46,7 @@ else{
            {
             messages.map((el)=>(
             
-                  <div className={`p-4 mb-12 m-4  ${el.sender==='user'?'bg-[#225DE5] self-end rounded-xl':'bg-[#1C1F33] text-[#E2E8F0] border  border-[#5B6EEC]/20 break-words max-w-[75%] sm:max-w-[60%]  tracking-wide self-start mb-20 rounded-xl  '}`}><ReactMarkdown>{el.text}</ReactMarkdown></div>
+                  <div className={`p-4 mb-12 m-4  ${el.sender==='user'?'bg-[#121212] self-end rounded-xl':'bg-[#1C1F33] text-[#E2E8F0] border  border-[#5B6EEC]/20 break-words max-w-[90%]  tracking-wide self-start mb-20 rounded-xl  '}`}><ReactMarkdown>{el.text}</ReactMarkdown></div>
         
             ))
            }

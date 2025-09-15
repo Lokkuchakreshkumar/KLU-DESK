@@ -32,7 +32,7 @@ const handlepreview = ()=>{
    window.open(previewUrl,'_blank')
 }
   return (
-    <div className='flex flex-col rounded-2xl m-8 items-start w-[95%] sm:w-[25%]  justify-start border bg-[#14274A] border-black p-8'>
+    <div className='flex flex-col rounded-2xl m-8 items-start sm:w-[30%] w-[90%]   justify-start border bg-[#121211] border-black p-8'>
         <div className='flex items-center'>
             <div className=' bg-[#2d56a9] text-cyan-500 flex justify-center items-center p-2 rounded-lg'><IoIosDocument className='inline '/></div>
             <div className={`p-2 px-4 ml-4 rounded-xl mono ${colorMap[type]} bg-white/10 backdrop-blur-3xl`}>{type}</div>

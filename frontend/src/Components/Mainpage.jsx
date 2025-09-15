@@ -26,7 +26,7 @@ return (
       
         <div className="text-3xl text-white text-center font-extrabold">Find Your Resources</div>
         <div className="text-xl text-white/40 mt-4 text-center font-semibold">Choose your academic details to access curated study materials and resources</div>
-        <form  onSubmit={()=>handleSubmit(event)}  className="w-[85%] rounded-2xl border border-white mb-16 mt-8 p-16 bg-[#050C1A] flex flex-col">
+        <form  onSubmit={()=>handleSubmit(event)}  className="w-[85%] rounded-2xl border border-white mb-16 mt-8 p-16 bg-neutral-900 flex flex-col">
             <label htmlFor="year" className="text-white font-bold">academic year</label>
          <select name="year" id="year" value={year} onChange={()=>handleYear(event)} required className="border  text-white  border-white rounded-xl h-10">
             <option value="1" className="text-black">1</option>
@@ -39,7 +39,7 @@ return (
             <option value="1" className="text-black">1</option>
             <option value="2" className="text-black">2</option>
          </select>
-         <button className="w-full p-4 hover:cursor-pointer hover: rounded-xl mt-8 bg-transparent text-white border border-cyan-500 hover:bg-cyan-500 hover:text-black"><AiFillThunderbolt className="inline mr-4"/>Show resources</button>
+         <button className="w-full p-4 hover:cursor-pointer hover: rounded-xl mt-8 bg-transparent text-white border border-amber-800 hover:bg-amber-500 hover:text-black"><AiFillThunderbolt className="inline mr-4"/>Show resources</button>
         </form>
 
     </section>

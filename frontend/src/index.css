@@ -5,7 +5,8 @@
 @import "tailwindcss";
 
 .bluespotlight{
-    background: radial-gradient(ellipse at top left,#1e3a8a 20%, #0f172a 60%);
+    background: radial-gradient(ellipse at top left, #0D0D0D 5%, #FF6B00 95%);
+
 }
 .strict{
      font-family: "Roboto Condensed", sans-serif;

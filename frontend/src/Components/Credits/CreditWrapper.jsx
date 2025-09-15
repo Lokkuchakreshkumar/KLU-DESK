@@ -7,7 +7,7 @@ import demovideo from "../../assets/WhatsApp Video 2025-08-26 at 16.52.32_222f65
 
 const CreditWrapper = () => {
   return (
-    <div className='flex flex-col items-center w-full bg-linear-to-br from-[#142140] to-[#121A28]'>
+    <div className='flex flex-col items-center w-full bg-linear-to-br from-[#9A3D00] to-[#722e00]'>
         <Recognition/>
         <Text/>
         <CreditCardWrapper/>
