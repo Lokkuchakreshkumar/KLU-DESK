@@ -5,7 +5,7 @@
 @import "tailwindcss";
 
 .bluespotlight{
-    background: radial-gradient(ellipse at top left, #0D0D0D 5%, #FF6B00 95%);
+    background: radial-gradient(ellipse at top left, #301700 10%, #FF6B00 90%);
 
 }
 .strict{
