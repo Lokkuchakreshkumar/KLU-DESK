@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown"
 const Main = ({ id }) => {
   let [input, setInput] = useState("");
       let RENDER_URI;
-let env = "dev"
+let env = "production"
 if(env == "production"){
  RENDER_URI= import.meta.env.VITE_RENDER_URI
 }
