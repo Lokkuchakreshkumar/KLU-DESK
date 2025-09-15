@@ -10,7 +10,7 @@ export default defineConfig({
       VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: "KLED– Your College Companion",
+        name: "KLED – Your College Companion",
         short_name: "KLED",
         start_url: "/",
         display: "standalone",
