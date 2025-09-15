@@ -10,7 +10,7 @@ import { IoIosWarning } from "react-icons/io";
 
 const Resource = () => {
      let RENDER_URI;
-let env = "production";
+let env = "dev";
 if(env == "production"){
  RENDER_URI= import.meta.env.VITE_RENDER_URI
 }
