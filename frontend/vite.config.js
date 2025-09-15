@@ -18,12 +18,12 @@ export default defineConfig({
         theme_color: "#000000",
         icons: [
           {
-            src: "/KLUDESKICON-v2.png",
+            src: "/ChatGPT Image Sep 15, 2025, 11_33_52 PM.png",
             type: "image/png",
             sizes: "192x192"
           },
           {
-            src: "/KLUDESKICON.png",
+            src: "/ChatGPT Image Sep 15, 2025, 11_33_52 PM.png",
             type: "image/png",
             sizes: "512x512"
           }
