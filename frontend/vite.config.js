@@ -12,18 +12,18 @@ export default defineConfig({
       manifest: {
         name: "KLU Desk – Your College Companion",
         short_name: "KLU Desk",
-        start_url: ".",
+        start_url: "/",
         display: "standalone",
         background_color: "#000000",
         theme_color: "#000000",
         icons: [
           {
-            src: "../frontend/public/KLUDESKICON-v2.png",
+            src: "/KLUDESKICON-v2.png",
             type: "image/png",
             sizes: "192x192"
           },
           {
-            src: "../frontend/public/KLUDESKICON.png",
+            src: "/KLUDESKICON.png",
             type: "image/png",
             sizes: "512x512"
           }
