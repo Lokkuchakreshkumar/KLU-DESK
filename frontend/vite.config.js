@@ -10,8 +10,8 @@ export default defineConfig({
       VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: "KLU Desk – Your College Companion",
-        short_name: "KLU Desk",
+        name: "KLED– Your College Companion",
+        short_name: "KLED",
         start_url: "/",
         display: "standalone",
         background_color: "#000000",
