@@ -3,15 +3,15 @@ import { FaMedal } from "react-icons/fa";
 
 const Card1 = () => {
   return (
-    <div className='flex flex-col w-full shadow-xl shadow-black m-4 sm:w-[45%]  p-4 mt-8 bg-[#121212]  rounded-xl items-center'>
+    <div className='flex flex-col w-full shadow-xl shadow-black mx-4  sm:w-[45%] mb-12 p-4 mt-8 bg-[#121212]  rounded-xl items-center'>
         <div className='flex items-center'>
             <div className='p-4  bg-[#0F2247] rounded-xl text-cyan-400'>
 <FaMedal/>
             </div>
           <div className='flex flex-col items-center p-4'>
-              <div className='text-white px-4 text-3xl  flex-grow'>
+              <a href='https://chakresh.vercel.app' className='text-white underline decoration-blue-500 px-4 text-3xl  flex-grow'>
                 Chakresh
-            </div>
+            </a>
             
             <div className='  text-white/50 text-sm  '>CSE 2nd Year</div>
           </div>
