@@ -2,7 +2,7 @@ import React from 'react'
 
 const Ourstory = () => {
   return (
-    <div className='flex flex-col mt-12 sm:w-4/5 rounded-xl shadow-sm shadow-black p-8 bg-[#121212] items-center justify-center  border border-white'>
+    <div className='flex flex-col mt-12 sm:w-4/5 rounded-xl shadow-sm shadow-black p-8 bg-[#121212] items-center justify-center  border border-white/50'>
         <div className=' font-semibold bg-clip-text text-3xl text-transparent bg-linear-to-r from-amber-600 to-amber-500 '>
             Our Story
         </div>

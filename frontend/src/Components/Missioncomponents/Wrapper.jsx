@@ -7,7 +7,7 @@ import Mission from './Mission.jsx'
 
 const Wrapper = () => {
   return (
-    <div className='flex flex-col p-8 items-center bg-linear-to-br from-[#ff6a001f] to-amber-800'>
+    <div className='flex flex-col p-8 w-full items-center justify-center bg-black'>
        <Mission/>
         <Whywe/>
         <Newsh/>

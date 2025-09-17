@@ -7,7 +7,7 @@ import Mainpage from "./Components/Mainpage.jsx"
 import GemChat from 'gchat'
 import Wrapper from "./Components/Missioncomponents/Wrapper.jsx"
 import CreditWrapper from "./Components/Credits/CreditWrapper.jsx"
-import icon from "../public/ChatGPT Image Sep 15, 2025, 11_33_52 PM.png"
+
 
 
 export default function App(){
@@ -33,7 +33,7 @@ Core instructions:
 `
   return(
 
-    <div className="min-h-screen flex flex-col sans items-center bluespotlight">
+    <div className="min-h-screen flex flex-col sans items-center newbg">
       <GemChat apiKey={import.meta.env.VITE_ENV} systemPrompt={systemPrompt} Memory={(chat)=>console.log(chat)}/>
         <Navbar/>
        

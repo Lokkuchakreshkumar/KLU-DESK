@@ -5,7 +5,7 @@ import Quality from './Quality'
 import Innovation from './Innovation'
 const CardsWrapper = () => {
   return (
-    <div className='flex flex-wrap space-x-0 items-center justify-center mt-8'>
+    <div className='sm:flex sm:flex-row gap-x-6   justify-center items-center my-8'>
         <Accessibilty/>
         <Community/>
         <Quality/>
