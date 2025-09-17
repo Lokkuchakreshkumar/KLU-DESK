@@ -58,17 +58,18 @@ const Main = ({ id }) => {
     <div className="flex flex-col min-h-screen  overflow-y-hidden w-full items-center text-white">
 
 
-      <div className="flex-1 mt-20 sm:pb-26 pb-38  overflow-y-auto rounded-2xl px-4">
+      <div className="flex-1 mt-20 sm:pb-26 pb-38 w-full overflow-y-auto rounded-2xl px-4">
         <div className="text-center text-xl">
         <RiGeminiLine className="inline mr-2 text-amber-300 text-xl animate-slow" />
         No Doubt is Dumb – Ask{" "}
         <span className="underline text-cyan-500">KLUE AI</span>.
       </div>
 
-        {messages.map((el, i) => (
+        <div className="w-full">
+          {messages.map((el, i) => (
           <div
             key={i}
-            className={`p-4 my-4 sm:max-w-[90%]  break-words tracking-wide rounded-xl ${
+            className={`p-4 my-4 break-words tracking-wide rounded-xl ${
               el.sender === "user"
                 ? "bg-[#121212] self-end ml-auto max-w-fit"
                 : " text-[#E2E8F0]    [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:max-w-full [&_pre]:box-border [&_pre]:whitespace-pre-wrap [&_code]:break-wordswh"
@@ -78,6 +79,7 @@ const Main = ({ id }) => {
           </div>
         ))}
       
+        </div>
         <div ref={messagesEndRef} />
       </div>
 
