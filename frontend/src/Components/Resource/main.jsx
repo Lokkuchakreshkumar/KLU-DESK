@@ -71,7 +71,7 @@ const Main = ({ id }) => {
             className={`p-4 my-4 sm:max-w-[90%]  break-words tracking-wide rounded-xl ${
               el.sender === "user"
                 ? "bg-[#121212] self-end ml-auto max-w-fit"
-                : " text-[#E2E8F0]    [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:max-w-full [&_pre]:box-border [&_pre]:whitespace-pre-wrap [&_code]:break-words"
+                : " text-[#E2E8F0]    [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:max-w-full [&_pre]:box-border [&_pre]:whitespace-pre-wrap [&_code]:break-wordswh"
             }`}
           >
             <ReactMarkdown>{el.text}</ReactMarkdown>
