@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Resource from './Components/Resource/Resource.jsx'
-
+import { Analytics } from '@vercel/analytics/react';
 
 import './index.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
@@ -21,5 +21,6 @@ let route = import.meta.env.VITE_SAFE_PATH;
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}/>
+    <Analytics/>
   </StrictMode>,
 )
