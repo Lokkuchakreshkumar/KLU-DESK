@@ -3,15 +3,15 @@ import { RiGeminiLine } from "react-icons/ri";
 import { FaLock } from "react-icons/fa6";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
+import { Grid } from 'react-loader-spinner'
 
 const Main = ({ id }) => {
   let [input, setInput] = useState("");
   let [messages, setMessages] = useState([]);
-
-  // Auto scroll ref
+let [loading,setLoading] = useState(false)
   const messagesEndRef = useRef(null);
 
-  // For production/local config
+ 
   let RENDER_URI;
   let env = "production";
   if (env === "production") {
@@ -20,7 +20,7 @@ const Main = ({ id }) => {
     RENDER_URI = `http://localhost:8080`;
   }
 
-  // Auto scroll on new messages
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -33,8 +33,7 @@ const Main = ({ id }) => {
     event.preventDefault();
 
     if (!input.trim()) return;
-
-    // Push user message
+setLoading(true);
     setMessages((prev) => [...prev, { sender: "user", text: input }]);
 
     try {
@@ -51,6 +50,7 @@ const Main = ({ id }) => {
     }
 
     setInput("");
+    setLoading(false);
   };
 
   return (
@@ -64,9 +64,15 @@ const Main = ({ id }) => {
         No Doubt is Dumb – Ask{" "}
         <span className="underline text-cyan-500">KLUE AI</span>.
       </div>
+       <div className="text-white/50 text-center text-sm py-2">
+            <FaLock className="inline text-amber-400 mb-1" /> No history. Just
+            secure, real-time AI for clear concepts. Chat memory is limited due
+            to no authentication.
+          </div>
 
         <div className="w-full">
-          {messages.map((el, i) => (
+         {
+           <div>{messages.map((el, i) => (
           <div
             key={i}
             className={`p-4 my-4 break-words tracking-wide rounded-xl ${
@@ -77,19 +83,34 @@ const Main = ({ id }) => {
           >
             <ReactMarkdown>{el.text}</ReactMarkdown>
           </div>
-        ))}
+        ))}</div>
+        
+         }
+        {
+          loading && <Grid
+  visible={true}
+  height="80"
+  width="25"
+  color="orange"
+  ariaLabel="grid-loading"
+  radius="12.5"
+  wrapperStyle={{}}
+  wrapperClass="grid-wrapper"
+  />
+         }
       
         </div>
+         
         <div ref={messagesEndRef} />
       </div>
 
       
-      <div className="bottom-0 fixed z-20 border border-white/50 bg-white/10 backdrop-blur-2xl rounded-lg mb-2 sm:w-[75%] w-[90%] p-2">
+      <div className="bottom-0 fixed z-20 border border-white/10 bg-white/10 backdrop-blur-2xl rounded-lg mb-2 sm:w-[75%] w-[90%] p-2">
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center">
             <input
               type="text"
-              className="border p-2 rounded-xl flex-grow ml-4 text-white resize-none mr-2 h-12"
+              className="w-full p-2 rounded-xl outline-none flex-grow ml-4 text-white resize-none mr-2 h-12"
               value={input}
               onChange={handleInput}
             />
@@ -100,11 +121,7 @@ const Main = ({ id }) => {
               <RiGeminiLine className="text-center text-xl" />
             </button>
           </div>
-          <div className="text-white/50 text-center text-sm py-2">
-            <FaLock className="inline text-amber-400 mb-1" /> No history. Just
-            secure, real-time AI for clear concepts. Chat memory is limited due
-            to no authentication.
-          </div>
+         
         </form>
       </div>
     </div>

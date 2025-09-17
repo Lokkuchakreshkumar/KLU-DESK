@@ -8,9 +8,15 @@
  background: radial-gradient(ellipse at top left, #301700 10%, #FF6B00 90%);
 
 }
+.newbluespotlight{
+ background: radial-gradient(ellipse at top left, #301700 10%, #371700 90%);
 
+}
   .newbg{
      background: radial-gradient(circle at top,#351a00 1%,#000 19%,black 80%);
+}
+  .verynewbg{
+     background: radial-gradient(circle at top,#643000 5%,#643000 15%,black 80%);
 }
 
 .strict{
