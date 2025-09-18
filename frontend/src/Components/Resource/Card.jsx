@@ -45,7 +45,7 @@ const handlepreview = ()=>{
 
 
 <button onClick={handlepreview} className='p-4 bg-cyan-transparent border border-white rounded-xl text-white  hover:bg-black w-full mt-4 hover:cursor-pointer'>Preview</button>
-<a href={convertDriveLink(url)} className='w-full flex justify-center border border-cyan-500 mt-4 p-4 text-white rounded-2xl hover:bg-cyan-500 hover:cursor-pointer hover:shadow-xl hover:shadow-cyan-500/50'>Downlaod in Drive</a>
+<a href={convertDriveLink(url)} className='w-full flex justify-center border border-cyan-500 mt-4 p-4 text-white rounded-2xl hover:bg-cyan-500 hover:cursor-pointer hover:shadow-xl hover:shadow-cyan-500/50'>Download in Drive</a>
 <button onClick={()=>Chat(id)} className='p-4 bg-linear-to-r from-sky-800 to-violet-800 border mono border-white rounded-xl text-white  w-full mt-4 hover:cursor-pointer'><RiGeminiLine className=' inline  mr-4 text-lg text-[#60a5fa]'/>Ask ai</button>
     </div>
   )
