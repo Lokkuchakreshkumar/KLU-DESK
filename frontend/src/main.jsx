@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Resource from './Components/Resource/Resource.jsx'
 import { Analytics } from '@vercel/analytics/react';
+import Unauthorized from './Components/Unauthorized.jsx'
+
 
 import './index.css'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
@@ -14,7 +16,8 @@ let route = import.meta.env.VITE_SAFE_PATH;
   {path:'/',element:<App/>}, 
   {path:`/${route}`,element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
-  {path:`/chat/:id`,element:<Chat/>}
+  {path:`/chat/:id`,element:<Chat/>},
+  {path:'/unauthorized',element:<Unauthorized/>}
  
 ])
 

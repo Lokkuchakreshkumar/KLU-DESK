@@ -109,13 +109,18 @@ res.send(data)
 
 app.post(`/${process.env.SAFEROUTE}`,async(req,res)=>{
 console.log(req.body.input)
+console.log(req.body.input.password);
+if(req.body.input.password !== process.env.password){
+    return res.status(401).send('unauthorized')
+}
+else{
 await pdf.create(req.body.input).then((result)=>{
     console.log(result)
     res.send(result)
 }).catch((Err)=>{
 console.log(Err)
 })
-
+}
 
 })
 app.listen('8080',()=>{

@@ -1,9 +1,12 @@
 
 import { useState } from 'react'
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
+
 
 const Admin = () => {
     let RENDER_URI;
+    let navigate = useNavigate();
 let env = "production"
 if(env == "production"){
  RENDER_URI= import.meta.env.VITE_RENDER_URI
@@ -19,6 +22,7 @@ else{
         semester:1,
         url:'',
         type:'',
+        password:''
     });
     
      
@@ -46,15 +50,23 @@ else{
         setformsubmit('')
       },3000)
         }catch(err){
-            console.log(err)
-
+            console.log(err.response.status)
+            if(err.response.status == 401){
+                alert('your unauthorized,contact chakresh for more info.redirecting to home page in 3 seconds')
+                 setTimeout(()=>{
+                   navigate('/')
+                  
+                 },3000)
+                
+            }
         }
     setInput({title:'',
     subject:'',
     year:1,
     semester:1,
     url:'',
-    type:'',}
+    type:'',
+  password:'' }
 
         )
     }
@@ -68,6 +80,8 @@ else{
              <input type="number" min={1} max={2} onChange={handleInput}  name='semester' value={input.semester}   placeholder='semester' required   className='h-16 p-4 border border-black'/>
              <input type="text"  onChange={handleInput}   placeholder='enter url of drive link'value={input.url} name='url' required className='h-16 p-4 border border-black' />
              <input type="text"  onChange={handleInput} value={input.type}  name='type'  placeholder='enter type ex:before_exam,pyq,notes,etc' className='h-16 p-4 border border-black' />
+              <input type='password' onChange={handleInput} value={input.password}  name='password'  placeholder='enter admin pass' required className='h-16 p-4 border border-black' />
+
              <button type="submit" className='p-4 bg-green-600 text-white'>Submit</button>
         </form> 
     
