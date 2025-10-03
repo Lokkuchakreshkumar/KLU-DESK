@@ -10,7 +10,7 @@ const Join = () => {
         <div className='flex mt-4 sm:space-x-8  '>
           <a  target='_blank' href="https://wa.me/918688913488?text=Hey%20Chakresh%2C%20we%20want%20to%20contribute%20to%20KLU%20DESK
 
-" className='p-4 border border-black text-white rounded-lg hover:bg-cyan hover:text-black hover:bg-amber-400 hover:scale-105 hover:shadow-lg  hover:shadow-amber-500/50'>Contribute</a>
+" className='p-4 border border-cyan-400/50 text-white rounded-lg hover:bg-cyan-400 hover:text-black hover:bg-amber-400 hover:scale-105 hover:shadow-lg  hover:shadow-cyan-500/50'>Contribute</a>
 <a target='_blank' href="https://chat.whatsapp.com/GSfZoEOlE809OSQFQj2j0c?mode=r_t" className='border  border-green-500 hover:shadow-lg hover:shadow-green-500/50 text-green-500  p-4 ml-2 bg-transparent hover:rounded-xl hover:bg-green-500 hover:text-white'><FaWhatsapp className='inline mr-4 text-green-500s'/>Join our Community</a>
         </div>
         <a target='_blank' href='https://t.me/+5BUV-tlZKmViMmE9' className='p-2 py-3 mt-4 flex hover:bg-black gap-x-8 hover:text-amber-400 hover:shadow-xl hover:shadow-black hover:cursor-pointer  sm:w-[35%] w-[90%] items-center rounded-xl justify-center text-amber-500  border border-amber-400'>
