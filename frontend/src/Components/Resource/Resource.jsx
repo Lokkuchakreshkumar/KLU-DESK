@@ -3,6 +3,7 @@ import apeksha from '../../../public/Adobe Express - file (4).png'
 import { useParams, } from 'react-router-dom'
 import axios from 'axios'
 import Card from './Card.jsx'
+import { Hearts } from 'react-loader-spinner'
 
 
 import { IoIosWarning } from "react-icons/io";
@@ -19,6 +20,7 @@ else{
 }
     let [data,setData] = useState([])
     let [loading,setLoading] = useState(true)
+    let [newloading,setNewloading] = useState(false);
     let [selected,setSelected] = useState("All");
     let [unique,setUnique] = useState([]);
       const params = useParams()
@@ -30,9 +32,11 @@ else{
                let realdata = data.data;
                setData(realdata);
     }else{
+      setNewloading(true);
       let data =await  axios.post(`${RENDER_URI}/fetch`,{input:selected});
       let realdata = data.data;
       setData(realdata);
+      setNewloading(false);
     }
     }
     let nameret = (e)=>{
@@ -70,10 +74,21 @@ else{
                 </div>
 
             
-                {loading &&  <div className='pt-20 flex justify-center'>
+                {loading &&  <div className='flex flex-col justify-center items-center'><div className='pt-20 flex justify-center'>
               <div className=' p-4 rounded-xl w-[95%] text-center text-white border border-yellow-500'><IoIosWarning className='text-yellow-400 mr-4 inline text-2xl' />If your seeing blank page this is due to we are running on free server ,wait for 10~30 seconds and refresh but the page will be back this is not any error</div>
 
-           </div>}
+           </div>
+             <div>
+              <Hearts
+  height="80"
+  width="80"
+  color="red"
+  ariaLabel="hearts-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  />
+        </div></div>}
        
         <div className='flex flex-wrap justify-center items-center pt-20'>
           {
@@ -97,12 +112,27 @@ else{
                 </div>
           }
         
-      { !loading &&  
+      { !loading && !newloading && 
         
             data.map((el) => {
         return <Card key={el._id} id={el._id} type={el.type} title={el.title} subject={el.subject} year={el.year} semester={el.semester} url={el.url}/>
 })
       }
+      {
+       !loading &&  newloading && 
+        <div>
+              <Hearts
+  height="80"
+  width="80"
+  color="red"
+  ariaLabel="hearts-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  />
+        </div>
+      }
+   
         </div>
 
     </div>

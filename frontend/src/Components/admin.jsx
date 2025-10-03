@@ -44,7 +44,7 @@ else{
              let data = await axios.post(`${RENDER_URI}/${import.meta.env.VITE_SAFE_PATH}`,{
         input:input
       })
-      console.log(data.data)
+      console.log(data.data)-
       setformsubmit('form submitted')
       setTimeout(()=>{
         setformsubmit('')
