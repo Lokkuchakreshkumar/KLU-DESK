@@ -35,7 +35,7 @@ app.post('/chat/:id',async(req,res)=>{
  console.log(req.body)
  memoryarr.push({sender:'user',msg:req.body})
    let data =  await pdf.findById(id);
-  
+
 const ai = new GoogleGenAI({
     apiKey:process.env.GEMINI_API_KEY
 });
@@ -47,9 +47,9 @@ async function main(prompt) {
   });
 
  return  response.text
- 
+
 }
-let prompt = `Your "KLUE AI" an Highly advanced ai education helper living in a browser web app called KLU DESK created Chakresh(portfolio:https://chakresh.vercel.app) and your work is to help students who asks doubts and they might ask any questions realted to education but
+let prompt = `Your "KLUE AI" an Highly advanced ai education helper living in a browser web app called KLED created Chakresh(portfolio:https://chakresh.vercel.app) and your work is to help students who asks doubts and they might ask any questions realted to education but
 here is your context why they came for you primarily
 subject:${data.subject}
 title:${data.title}
@@ -81,8 +81,8 @@ Format like this:
 5. ### 📝 Summary
    Wrap it up with key points or takeaways.
 
-Keep paragraphs short (2–4 lines).  
-Use markdown syntax (**bold**) and emojis to improve clarity.  
+Keep paragraphs short (2–4 lines).
+Use markdown syntax (**bold**) and emojis to improve clarity.
 Do not use long, dense paragraphs. Make it visually scannable and friendly to read.
 
 Avoid vague responses — stay on-topic and support students with examples if needed.
@@ -101,10 +101,10 @@ app.get('/:year/:semester',async(req,res)=>{
     const semester = parseInt(req.params.semester)
     console.log(year,semester)
     let data = await pdf.find({year,semester})
-    
+
 res.send(data)
 
-  
+
 })
 
 app.post(`/${process.env.SAFEROUTE}`,async(req,res)=>{
