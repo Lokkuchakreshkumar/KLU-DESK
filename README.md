@@ -1,6 +1,6 @@
-# KLU DESK
+# KLED
 
-KLU DESK is an AI-powered educational helper designed to assist students with their academic questions. It features a React-based frontend and a Node.js backend that leverages the Google Gemini AI for generating answers.
+KLED is an AI-powered educational helper designed to assist students with their academic questions. It features a React-based frontend and a Node.js backend that leverages the Google Gemini AI for generating answers.
 
 ## Features
 
