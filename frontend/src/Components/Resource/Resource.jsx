@@ -134,7 +134,7 @@ else{
               <Hearts
   height="80"
   width="80"
-  color="red"
+  color="green"
   ariaLabel="hearts-loading"
   wrapperStyle={{}}
   wrapperClass=""
