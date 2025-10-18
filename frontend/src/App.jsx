@@ -7,6 +7,7 @@ import Mainpage from "./Components/Mainpage.jsx"
 import GemChat from 'gchat'
 import Wrapper from "./Components/Missioncomponents/Wrapper.jsx"
 import CreditWrapper from "./Components/Credits/CreditWrapper.jsx"
+import UploadBanner from "./Components/UploadBanner.jsx"
 
 
 
@@ -37,7 +38,8 @@ Core instructions:
       <GemChat apiKey={import.meta.env.VITE_ENV} systemPrompt={systemPrompt} Memory={(chat)=>console.log(chat)}/>
         <Navbar/>
        
-       <Starter/>
+    
+       <UploadBanner/>
      
        <Intro/>
        <Before/>
