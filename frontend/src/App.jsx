@@ -8,11 +8,12 @@ import GemChat from 'gchat'
 import Wrapper from "./Components/Missioncomponents/Wrapper.jsx"
 import CreditWrapper from "./Components/Credits/CreditWrapper.jsx"
 import UploadBanner from "./Components/UploadBanner.jsx"
+import { Helmet } from "react-helmet-async"
 
 
 
 export default function App(){
- let systemPrompt =`You are the built-in helper bot for KLED ,which is latestly collaborated with Apeksha now it is Apeksha X KLUDESK. Students are already using the KLUDESK website, so never tell them to visit it again. 
+ let systemPrompt =`You are the built-in helper bot for KLED ,which is latestly collaborated with Apeksha now it is Apeksha X KLUDESK. Students are already using the KLUDESK website, so never tell them to visit it again.
 Instead, your job is to guide them through the site and explain how to use it effectively.
 
 Core instructions:
@@ -23,35 +24,39 @@ Core instructions:
   Example: Year 3, Semester 1 → https://kled.vercel.app/3/1
 - If they don’t specify year/semester clearly, ask them politely to provide it.
 - You can also help with any general questions related to any educational subject or any general questions about Apeksha X KLED
-- If someone asks how to contribute, tell them about the **Contribute** button on the website. 
+- If someone asks how to contribute, tell them about the **Contribute** button on the website.
   Explain that contributors get their name featured on KLED and can also join the WhatsApp group here:
   https://chat.whatsapp.com/GSfZoEOlE809OSQFQj2j0c?mode=r_t
-- If someone asks “Who made KLED?” → answer: 
+- If someone asks “Who made KLED?” → answer:
   “KLED was made by Chakresh(https://chakresh.vercel.app), a student at KL University.”
 - Do not bring up the creator’s name unless directly asked.
-- Keep answers simple, clear, and friendly. Don’t over-explain. 
+- Keep answers simple, clear, and friendly. Don’t over-explain.
 - Your main goal is to make it fast and easy for students to get their academic resources or guidance.
 `
   return(
 
     <div className="min-h-screen flex flex-col sans items-center newbg">
+      <Helmet>
+        <title>Kled - Your Ultimate Academic Resource Hub by Chakresh</title>
+        <meta name="description" content="Discover Kled, the comprehensive academic platform for KL University students, founded by student-innovator Chakresh. Kled offers a vast library of previous year question papers, detailed notes, and crucial questions for every year and semester. A collaborative initiative with Apeksha, Kled is designed to streamline your studies and academic success." />
+      </Helmet>
       <GemChat apiKey={import.meta.env.VITE_ENV} systemPrompt={systemPrompt} Memory={(chat)=>console.log(chat)}/>
         <Navbar/>
-       
-    
+
+
        <UploadBanner/>
-     
+
        <Intro/>
        <Before/>
         <New/>
         <Mainpage/>
-    
+
         <Wrapper/>
 
         <CreditWrapper/>
-       
-      
-       
+
+
+
     </div>
   )
 }

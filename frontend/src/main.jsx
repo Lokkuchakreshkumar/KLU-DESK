@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Resource from './Components/Resource/Resource.jsx'
 import { Analytics } from '@vercel/analytics/react';
 import Unauthorized from './Components/Unauthorized.jsx'
+import { HelmetProvider } from 'react-helmet-async';
 
 
 import './index.css'
@@ -13,17 +14,19 @@ import Chat from './Components/Resource/Chat.jsx'
 import Admin from './Components/admin.jsx'
 let route = import.meta.env.VITE_SAFE_PATH;
  const router = createBrowserRouter([
-  {path:'/',element:<App/>}, 
+  {path:'/',element:<App/>},
   {path:`/${route}`,element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
   {path:`/chat/:id`,element:<Chat/>},
   {path:'/unauthorized',element:<Unauthorized/>}
- 
+
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <HelmetProvider>
+      <RouterProvider router={router}/>
+    </HelmetProvider>
     <Analytics/>
   </StrictMode>,
 )
