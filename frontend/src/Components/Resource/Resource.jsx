@@ -116,9 +116,14 @@ else{
 
                 </div>
           }
-
+          <div className='sm:!w-full flex flex-col justify-center items-center'>
+              <div className='flex justify-center'>
+              <iframe  className='sm:!w-[560px] sm:!h-[315px] w-[90%]' src="https://www.youtube-nocookie.com/embed/videoseries?si=KnoeP-VwADD9RnYx&amp;list=PLrj8jVm5-0-3uhlExOtWLQxWuYaZ4Ory3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div className='font-bold  text-white p-3'>Best playlist for DBMS </div>
+          </div>
       { !loading && !newloading &&
-
+                 
             data.map((el) => {
         return <Card key={el._id} id={el._id} type={el.type} title={el.title} subject={el.subject} year={el.year} semester={el.semester} url={el.url}/>
 })
