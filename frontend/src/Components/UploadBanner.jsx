@@ -7,12 +7,7 @@ const UploadBanner = ()=>{
         New Resources uploaded
       </div>
  </div>
- <div className=" flex  mt-8 sm:py-2 p-2 sm:min-w-[20%] w-[90%] gap-4 justify-center bg-amber-400/10 backdrop-blur-2xl rounded-2xl border border-amber-400 items-center "> 
-      <div className="w-[10px] h-[10px] bg-amber-600 animate-scale  p-1 animate-pulse rounded-full"></div>
-      <div className="text-amber-600">
-        We are Experiencing Server outages.Due to high traffic.We shifted to new servers But still we are Experiencing issues.We will fix soon.
-      </div>
- </div>
+
  </div>
     )
 }
