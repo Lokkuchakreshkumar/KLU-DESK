@@ -36,7 +36,7 @@ app.post('/uniSearch',async(req,res)=>{
     console.log(pdfs);
     const ai = new GoogleGenAI({apiKey:process.env.GEMINI_NEW_KEY});
  let prompt = `
-You are uniSearch inside the kled website.
+You are SynkAI inside the kled website.
 
 Your job:
 Given the user query, search ONLY inside the provided JSON list of PDFs and return matching results.
@@ -56,6 +56,7 @@ Hard Rules:
 11.And also guide the user ,if resources were found tell him about them.
 12.You should not just give cards and you have to give details about him.
 13.See there might be complexity in kled ,because oops means java also (subjects name different),if you have any doubt ask user explicity.You need to think,this is just example,you need to think before replying to user.
+14. Make sure everything has gaps ,should not look like congested at all.
 Card HTML Template (use EXACTLY this structure and styling):
 <div style="
   background:#111;
@@ -113,7 +114,8 @@ ${req.body.input}
 `
 
 
-    async function main() {
+ try{
+       async function main() {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
     contents: prompt
@@ -124,6 +126,9 @@ ${req.body.input}
 let data = await main();
 res.status(200).json({reply:data});
 
+ }catch(err){
+    res.status(400).json({error:"some error occured"})
+ }
 
 })
 app.post('/chat/:id',async(req,res)=>{

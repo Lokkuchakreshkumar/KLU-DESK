@@ -101,7 +101,7 @@ Core instructions:
      </div>
     </div>}
  {
-  !loading &&  <div dangerouslySetInnerHTML={{__html:reply}} className="text-white text-sm">
+  !loading &&  <div dangerouslySetInnerHTML={{__html:reply}} className="text-white inter  text-[18px]">
    
   </div>
  }
@@ -110,8 +110,8 @@ Core instructions:
           <form onSubmit={handleSubmit} action="" className="h-full flex px-2 items-center">
             <input value={input} onChange={widthControl} type="text" placeholder="Ask SynkAI agent" className={` placeholder:text-white/50 rounded-xl py-3 px-2 text-white text-center outline-none h-full w-full  ${reply.trim()!=""?'border-y my-2 border-white/25 ':''}`} />
             
-             <div onClick={handleSubmit} className={` backdrop-blur-xl bg-blue-400 transition-all duration-1500 flex justify-center items-center p-2 hover:cursor-pointer  ml-2 mr-1 rounded-xl`}>{!loading && <IoSendSharp className="inline"/> } </div> 
-              
+{!loading &&              <div onClick={handleSubmit} className={` backdrop-blur-xl bg-blue-400 transition-all duration-1500 flex justify-center items-center p-2 hover:cursor-pointer  ml-2 mr-1 rounded-xl`}><IoSendSharp className="inline"/>  </div> 
+}              
             
           </form>
         </div>
