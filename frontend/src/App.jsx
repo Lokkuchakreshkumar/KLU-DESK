@@ -28,17 +28,17 @@ else{
 }
   let [input,setInput] = useState('');
   let [width,setWidth] = useState(false);
-  let [button,showButton] = useState(false)
+  
   let [loading,setLoading] = useState(false);
    let [reply,setReply] = useState("")
   let widthControl = (e)=>{
      setInput(e.target.value);
     if(e.target.value===''){
       setWidth(false)
-      showButton(false)
+    
     }else{
       setWidth(true);
-      showButton(true);
+    
     }
   }
   let handleSubmit = async(e)=>{
@@ -96,7 +96,9 @@ Core instructions:
   `}
 >
   {loading && <div className="flex flex-col items-center justify-center">
-       <Loader/> 
+     <div className="p-2">
+        <Loader/> 
+     </div>
     </div>}
  {
   !loading &&  <div dangerouslySetInnerHTML={{__html:reply}} className="text-white text-sm">
@@ -107,10 +109,10 @@ Core instructions:
 
           <form onSubmit={handleSubmit} action="" className="h-full flex px-2 items-center">
             <input value={input} onChange={widthControl} type="text" placeholder="Ask SynkAI agent" className={` placeholder:text-white/50 rounded-xl py-3 px-2 text-white text-center outline-none h-full w-full  ${reply.trim()!=""?'border-y my-2 border-white/25 ':''}`} />
-            {
-              button && !loading && <div onClick={handleSubmit} className={` backdrop-blur-xl bg-blue-400 transition-all duration-1500 flex justify-center items-center p-2 hover:cursor-pointer  ml-2 mr-1 rounded-xl`}>{!loading && <IoSendSharp className="inline"/> } </div> 
+            
+             <div onClick={handleSubmit} className={` backdrop-blur-xl bg-blue-400 transition-all duration-1500 flex justify-center items-center p-2 hover:cursor-pointer  ml-2 mr-1 rounded-xl`}>{!loading && <IoSendSharp className="inline"/> } </div> 
               
-            }
+            
           </form>
         </div>
         <Navbar/>
