@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Admin = () => {
     let RENDER_URI;
     let navigate = useNavigate();
-let env = "dev";
+let env = "production";
 if(env == "production"){
  RENDER_URI= import.meta.env.VITE_RENDER_URI
 }
