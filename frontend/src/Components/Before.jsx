@@ -4,7 +4,6 @@ export default function Before(){
     return(
         <div className="w-full flex flex-col justify-center items-center">
            
-             <div className='text-white mt-24 sm:mb-4 text-4xl font-semibold animate-pulse'>Join us</div>
               <Join/>
         <div className="flex flex-col  mt-8 w-[92%] sm:w-3/5 p-4 bg-neutral-900 shadow-xl rounded-2xl shadow-black items-center justify-center">
            

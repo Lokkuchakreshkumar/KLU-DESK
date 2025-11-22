@@ -30,6 +30,102 @@ app.post('/fetch',async(req,res)=>{
   console.log(result)
     res.send(result);
 })
+app.post('/uniSearch',async(req,res)=>{
+    console.log(req.body)
+    let pdfs = await pdf.find({});
+    console.log(pdfs);
+    const ai = new GoogleGenAI({apiKey:process.env.GEMINI_NEW_KEY});
+ let prompt = `
+You are uniSearch inside the kled website.
+
+Your job:
+Given the user query, search ONLY inside the provided JSON list of PDFs and return matching results.
+
+Hard Rules:
+1. Only use items from the provided PDF list.
+2. Output must be clean HTML.
+3. Output must NOT contain any triple backticks or code blocks. Never use \`\`\` in the response.
+4. Use the EXACT card design given below.
+5. Do NOT change width or height in any element.
+6. Each card must show: title, subject, year, semester, type, open-link, and a downloadable link.
+7. To generate the downloadable link, extract the file ID from the "url" field and convert it into:
+   https://drive.google.com/uc?export=download&id=FILE_ID
+8. The output must ONLY be the final HTML, no explanations or surrounding text.
+9. Use premium styled buttons (as given in the template). Do not replace them with plain links.
+10. If zero matches:you can reply with empathy no just static response"
+11.And also guide the user ,if resources were found tell him about them.
+12.You should not just give cards and you have to give details about him.
+13.See there might be complexity in kled ,because oops means java also (subjects name different),if you have any doubt ask user explicity.You need to think,this is just example,you need to think before replying to user.
+Card HTML Template (use EXACTLY this structure and styling):
+<div style="
+  background:#111;
+  border:1px solid #333;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:12px;
+  color:white;
+  font-family:system-ui;
+">
+  <h2 style="font-size:1rem; font-weight:600; margin:0;">{{TITLE}}</h2>
+  <p style="opacity:0.7; margin:6px 0;">
+    Subject: {{SUBJECT}}
+    Year: {{YEAR}}
+    Semester: {{SEM}}
+    Type: {{TYPE}}
+  </p>
+
+  <div style="display:flex; gap:10px; margin-top:10px;">
+
+    <a href="{{OPEN_URL}}" target="_blank" style="
+      background:#1a73e8;
+      color:white;
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:0.85rem;
+      font-weight:500;
+      box-shadow:0 0 8px rgba(26,115,232,0.4);
+      transition:0.2s;
+      cursor:pointer;
+    ">Open</a>
+
+    <a href="{{DOWNLOAD_URL}}" style="
+      background:#18c964;
+      color:#000;
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:0.85rem;
+      font-weight:600;
+      box-shadow:0 0 8px rgba(24,201,100,0.4);
+      transition:0.2s;
+      cursor:pointer;
+    ">Download</a>
+
+  </div>
+</div>
+
+PDF Resources JSON:
+${JSON.stringify(pdfs)}
+
+User Query:
+${req.body.input}
+`
+
+
+    async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: prompt
+  });
+  return response.text
+}
+
+let data = await main();
+res.status(200).json({reply:data});
+
+
+})
 app.post('/chat/:id',async(req,res)=>{
     let {id} = req.params
  console.log(req.body)

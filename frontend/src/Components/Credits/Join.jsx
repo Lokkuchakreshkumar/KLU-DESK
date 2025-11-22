@@ -4,7 +4,7 @@ import apeksha from '../../../public/Adobe Express - file (4).png'
 
 const Join = () => {
   return (
-    <div className='flex flex-col   m-4 rounded-xl bg-neutral-900 border border-black p-4 mt- 4 items-center justify-center'>
+    <div className='flex flex-col   mt-20 rounded-xl bg-neutral-900 border border-black p-4  items-center justify-center'>
         <div className='text-white font-bold text-2xl'>Join Our Mission</div>
         <div className='text-white/50 text-center mt-4'>Want to make a difference? Join our growing community of student contributors and help your peers succeed.</div>
         <div className='flex mt-4 sm:space-x-8  '>

@@ -10,10 +10,11 @@ const Main = ({ id }) => {
   let [messages, setMessages] = useState([]);
 let [loading,setLoading] = useState(false)
   const messagesEndRef = useRef(null);
+ 
 
  
   let RENDER_URI;
-  let env = "production";
+  let env = "dev";
   if (env === "production") {
     RENDER_URI = import.meta.env.VITE_RENDER_URI;
   } else {
