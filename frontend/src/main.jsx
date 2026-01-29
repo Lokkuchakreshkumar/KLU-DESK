@@ -4,6 +4,7 @@ import Resource from './Components/Resource/Resource.jsx'
 import { Analytics } from '@vercel/analytics/react';
 import Unauthorized from './Components/Unauthorized.jsx'
 import { HelmetProvider } from 'react-helmet-async';
+import Upload from './Components/Uploads/Upload.jsx'
 
 
 import './index.css'
@@ -18,7 +19,8 @@ let route = import.meta.env.VITE_SAFE_PATH;
   {path:`/${route}`,element:<Admin/>},
   {path:`/:year/:semester`,element:<Resource/>},
   {path:`/chat/:id`,element:<Chat/>},
-  {path:'/unauthorized',element:<Unauthorized/>}
+  {path:'/unauthorized',element:<Unauthorized/>},
+  {path:'/upload',element:<Upload/>}
 
 ])
 

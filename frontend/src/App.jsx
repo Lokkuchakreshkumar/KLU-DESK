@@ -121,11 +121,12 @@ Core instructions:
        <UploadBanner/>
 
        <Intro/>
-<Join/>
+
         <New/>
         <Mainpage/>
 
         <Wrapper/>
+        <Join/>
 
         <CreditWrapper/>
 
