@@ -14,7 +14,7 @@ let [loading,setLoading] = useState(false)
 
  
   let RENDER_URI;
-  let env = "dev";
+  let env = "production";
   if (env === "production") {
     RENDER_URI = import.meta.env.VITE_RENDER_URI;
   } else {
