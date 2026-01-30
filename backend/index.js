@@ -228,7 +228,7 @@ app.get('/:year/:semester',async(req,res)=>{
     const year = parseInt(req.params.year)
     const semester = parseInt(req.params.semester)
     console.log(year,semester)
-    let data = await pdf.find({year,semester})
+    let data = await pdf.find({year,semester,verified:true})
 
 res.send(data)
 

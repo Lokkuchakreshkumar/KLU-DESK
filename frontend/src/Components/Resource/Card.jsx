@@ -72,11 +72,17 @@ function DownloadLink(url){
         <div className='text-white/50 flex items-center outfit mt-4'><FaCalendarAlt className='inline'/><span className='ml-4'></span>{year}{yearMap[year]} <span className='flex items-center mx-2 justify-center '>&#x2022;</span>Semester&nbsp;{semester}</div>
 
 
-{isDrive && <div>
+{isDrive && <div className='w-full'>
   <a href={PreviewLink(url)} target='_blank' className='p-4 bg-cyan-transparent border border-white rounded-xl text-white  hover:bg-black w-full flex justify-center mt-4 hover:cursor-pointer'>Preview</a>
 <a href={DownloadLink(url)}  className='w-full flex justify-center border border-cyan-500 mt-4 p-4 text-white rounded-2xl hover:bg-cyan-500 hover:cursor-pointer hover:shadow-xl hover:shadow-cyan-500/50'>Download in Drive</a>
   </div>}
-<button onClick={()=>Chat(id)} className='p-4 bg-linear-to-r from-sky-800 to-violet-800 border mono border-white rounded-xl text-white  w-full mt-4 hover:cursor-pointer'><RiGeminiLine className=' inline  mr-4 text-lg text-[#60a5fa]'/>Ask ai</button>
+  {
+    !isDrive && <div className='w-full'>
+      <a href={url} target='_blank'  className='w-full flex justify-center border border-cyan-500 mt-4 p-4 text-white rounded-2xl hover:bg-cyan-500 hover:cursor-pointer hover:shadow-xl hover:shadow-cyan-500/50'>Preview / Download</a>
+
+    </div>
+  }
+
     </div>
   )
 }
