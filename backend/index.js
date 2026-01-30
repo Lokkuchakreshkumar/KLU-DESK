@@ -4,11 +4,29 @@ import mongoose from "mongoose"
 import pdf from "./models/pdf.js"
 import cors from "cors"
 import { GoogleGenAI } from "@google/genai"
-
-
-
+import {v2 as cloudinary} from "cloudinary";
+import pkg from "multer-storage-cloudinary"
+import multer from "multer"
+const {CloudinaryStorage} = pkg;
 
 dotenv.config()
+
+cloudinary.config({
+  cloud_name:process.env.CLOUD_NAME,
+  api_key:process.env.CLOUDINARY_API_KEY,
+  api_secret:process.env.CLOUDINARY_API_SECRET
+})
+
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params:{
+    folder:"resources",
+    resource_type:"raw",
+    allowed_formats:["pdf",".docx","doc"]
+  }
+})
+
+const upload = multer({storage});
 
 let memoryarr= [];
 if(memoryarr.length >=100){
@@ -29,6 +47,15 @@ app.post('/fetch',async(req,res)=>{
   let result =  await pdf.find({subject:req.body.input})
   console.log(result)
     res.send(result);
+})
+app.post('/upload',upload.single("pdf"),async(req,res)=>{
+  try{
+    res.status(200).json({
+      url:req.file.path
+    })
+  }catch(err){
+    console.log(JSON.stringify(err));
+  }
 })
 app.post('/uniSearch',async(req,res)=>{
     console.log(req.body)
@@ -223,6 +250,17 @@ console.log(Err)
 })
 }
 
+})
+app.post('/create',async(req,res)=>{
+  console.log(req.body.input);
+  try{
+   let status =  await pdf.create(req.body.input)
+   res.status(200).json({success:true,status:status})
+
+  }
+  catch(err){
+    console.log(err)
+  }
 })
 app.listen('8080',()=>{
     mongo_cnct().then(()=>{

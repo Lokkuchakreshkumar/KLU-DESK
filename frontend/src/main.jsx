@@ -21,6 +21,7 @@ let route = import.meta.env.VITE_SAFE_PATH;
   {path:`/chat/:id`,element:<Chat/>},
   {path:'/unauthorized',element:<Unauthorized/>},
   {path:'/upload',element:<Upload/>}
+  
 
 ])
 
