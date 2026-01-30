@@ -24,7 +24,12 @@ const pdfSchema = new mongoose.Schema({
     type:{
         type:String,
         default:'before Exam'
-    }
+    },
+    verified: {
+  type: Boolean,
+  default: false
+}
+
 
 })
 const pdf = new mongoose.model('pdf',pdfSchema)
