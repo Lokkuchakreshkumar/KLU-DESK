@@ -21,7 +21,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params:{
     folder:"resources",
-    resource_type:"raw",
+    resource_type:"image",
     allowed_formats:["pdf",".docx","doc"]
   }
 })
